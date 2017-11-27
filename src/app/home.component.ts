@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
+import { MessagesComponent } from './messages.component';
+import { NewMessageComponent } from './new-message.component';
 import { NavComponent } from './nav.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'home',
   // templateUrl: './app.component.html',
   template: `
-            <nav></nav>
-            <router-outlet></router-outlet>
-            `,
+            <h1>Message Board </h1>
+            <new-message></new-message>
+            <messages></messages>`,
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class HomeComponent {
 
   //to capture and the events emitted from the components , needs a viewChild importfrom angular/core;
   //in addition to adding the binding to the template tag for messages in the form:  (onPosted)="onPosted($event)"
