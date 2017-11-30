@@ -22,6 +22,7 @@ export class WebService {
         this.getMessages();
     }
     
+    //implemented using Observables instead of promises
     getMessages(user?){
             //inline if statement that wilset the value of user if it is provided
             user = (user) ? '/' + user : '';
@@ -37,6 +38,7 @@ export class WebService {
             });
      }
 
+    //implemented using promises
     async postMessages(message ){
         try {
             var response = await this.http.post(this.BASE_URL + '/messages',message).toPromise();
