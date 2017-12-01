@@ -22,7 +22,7 @@ import { NavComponent } from './nav.component';
 import { HomeComponent } from './home.component';
 import { RegisterComponent } from './register.component';
 import { AuthService } from './auth.service'
-
+import { LoginComponent } from './login.component'
 
 //empty routes array
 var routes = [{
@@ -40,13 +40,17 @@ var routes = [{
 {
   path:'register',
   component: RegisterComponent
+},
+{
+  path:'login',
+  component: LoginComponent
 }];
 
 @NgModule({
   declarations: [
     //all components need to be added onto here
     AppComponent,MessagesComponent,NewMessageComponent,NavComponent,HomeComponent,
-    RegisterComponent
+    RegisterComponent,LoginComponent
   ],
   imports: [
     BrowserModule,BrowserAnimationsModule,MatButtonModule,MatCheckboxModule, MatCardModule,
