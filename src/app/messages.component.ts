@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router'
 @Component({
     selector: 'messages',
     // template:'this is a the messages component: {{ messages[0].text }}'
-    
+    //<div *ngFor="let message of webService.messages | async">
     template: `
              <div *ngFor="let message of webService.messages | async">
                 <mat-card class="card">
@@ -27,6 +27,10 @@ export class MessagesComponent{
     ngOnInit(){
         var name = (this.route.snapshot.params.name);
         this.webService.getMessages(name);
+        // the below has been commented because webService.messages | async was added to its template above
+        // this.webService.messages.subscribe(messages =>{
+        //     this.messages = messages;
+        // })
     }
     // messages = [{text:'some text',owner:'Tim'},{text:'other message',owner:'Bob'}];
 }
