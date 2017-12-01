@@ -21,6 +21,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { NavComponent } from './nav.component';
 import { HomeComponent } from './home.component';
 import { RegisterComponent } from './register.component';
+import { AuthService } from './auth.service'
+
 
 //empty routes array
 var routes = [{
@@ -50,7 +52,7 @@ var routes = [{
     BrowserModule,BrowserAnimationsModule,MatButtonModule,MatCheckboxModule, MatCardModule,
     MatInputModule,MatSnackBarModule,MatToolbarModule,HttpModule,FormsModule, ReactiveFormsModule,RouterModule.forRoot(routes)
   ],
-  providers: [WebService],
+  providers: [WebService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
