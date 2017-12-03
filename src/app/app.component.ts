@@ -12,8 +12,8 @@ import { NavComponent } from './nav.component';
 })
 export class AppComponent {
 
-  //to capture and the events emitted from the components , needs a viewChild importfrom angular/core;
-  //in addition to adding the binding to the template tag for messages in the form:  (onPosted)="onPosted($event)"
+  // to capture and the events emitted from the components , needs a viewChild importfrom angular/core;
+  // in addition to adding the binding to the template tag for messages in the form:  (onPosted)="onPosted($event)"
   // @ViewChild(MessagesComponent) messages : MessagesComponent;
   // onPosted(message){
   //   // console.log(message);

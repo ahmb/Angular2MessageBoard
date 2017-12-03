@@ -1,17 +1,17 @@
-import { Injectable } from '@angular/core'
-import { Http } from '@angular/http'
-import { Router } from '@angular/router'
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import { Router } from '@angular/router';
 
 
 @Injectable()
-export class AuthService{
-   
-    BASE_URL = 'http://localhost:49198/auth';
+export class AuthService {
+
+    BASE_URL = 'http://localhost:49199/auth';
 
     NAME_KEY = 'name';
     TOKEN_KEY = 'token';
 
-    constructor(private http:Http, private router: Router){}
+    constructor(private http: Http, private router: Router) {}
 
     get name(){
         return localStorage.getItem(this.NAME_KEY);
@@ -21,12 +21,11 @@ export class AuthService{
         return !!localStorage.getItem(this.TOKEN_KEY);
     }
 
-    login(loginData){
-        this.http.post(this.BASE_URL+'/login',loginData).subscribe(res =>{
+    login(loginData) {
+        this.http.post(this.BASE_URL + '/login', loginData).subscribe(res => {
         // console.log(res)
         this.authenticate(res);
-        
-        }
+        });
     }
 
     register(user) {
@@ -42,15 +41,14 @@ export class AuthService{
         localStorage.removeItem(this.NAME_KEY);
     }
 
-    authenticate(res){
+    authenticate(res) {
         var authResponse = res.json();
-        
-        if(!authResponse.token){
+        if (!authResponse.token) {
             return;
         }
 
-        localStorage.setItem(this.TOKEN_KEY,authResponse.token);
-        localStorage.setItem(this.NAME_KEY,authResponse.firstName);
+        localStorage.setItem(this.TOKEN_KEY, authResponse.token);
+        localStorage.setItem(this.NAME_KEY, authResponse.firstName);
         this.router.navigate(['/']);
     }
 }

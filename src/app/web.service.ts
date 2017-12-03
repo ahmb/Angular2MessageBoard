@@ -6,7 +6,7 @@ import { MatSnackBar } from '@angular/material'
 
 @Injectable()
 export class WebService {
-    BASE_URL = 'http://localhost:49198/api';
+    BASE_URL = 'http://localhost:49199/api';
     
     //messages array has been made private since the use of the subject below(messageSubject)
     //observables can observe subjects , and so subscribers will recieve updates automatically
